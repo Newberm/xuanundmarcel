@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passwortgeschützte Hochzeitseinladung</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .hidden {
+            display: none;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gib das Passwort ein, um die Einladung zu sehen</h1>
+    <input type="password" id="password" placeholder="Passwort eingeben">
+    <button onclick="checkPassword()">Einloggen</button>
 
+    <div id="content" class="hidden">
+        <h2>Willkommen zu unserer Hochzeitseinladung!</h2>
+        <p>Wir heiraten am 16. August 2025 in Bramsche.</p>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const input = document.getElementById('password').value;
+            const correctPassword = 'meinPasswort123'; // Setze hier dein Passwort ein
+            if (input === correctPassword) {
+                document.getElementById('content').classList.remove('hidden');
+            } else {
+                alert('Falsches Passwort!');
+            }
+        }
+    </script>
+</body>
+</html>
